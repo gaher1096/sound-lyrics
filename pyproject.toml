@@ -22,3 +22,6 @@ dependencies = [
     "python-dotenv",
     "lrcup",
 ]
+
+[tool.setuptools]
+py_modules = ["main", "lyrics_finder"]
