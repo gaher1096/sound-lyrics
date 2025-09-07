@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Chequeo básico de sintaxis (compileall)
+        run: |
+          python - <<'PY'
+          import compileall, sys
+          ok = compileall.compile_dir('.', force=True, quiet=1)
+          sys.exit(0 if ok else 1)
+          PY
+
+
