@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sound-lyrics"
+version = "0.1.0"
+authors = [
+  { name="Gabriel Hernan Ordoñez Achury", email="gaher1096@hotmail.com" },
+]
+description = "Un buscador de letras y karaoke con letras sincronizadas usando LRCLIB y Audd.io."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "requests",
+    "python-dotenv",
+    "lrcup",
+]
