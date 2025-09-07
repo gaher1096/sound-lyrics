@@ -10,11 +10,15 @@ Un buscador de letras y karaoke con letras sincronizadas usando LRCLIB y Audd.io
 - **✨ Efectos visuales**: Efecto de escritura para letras sincronizadas reales
 - **🎵 Sincronización inteligente**: Timestamps reales o simulados según disponibilidad
 
+## 📦 Repositorio
+
+Encuéntralo en GitHub: `https://github.com/gaher1096/sound-lyrics`
+
 ## 🚀 Instalación
 
 1. **Clona el repositorio**:
    ```bash
-   git clone <url-del-repositorio>
+   git clone https://github.com/gaher1096/sound-lyrics
    cd sound-lyrics
    ```
 
@@ -39,10 +43,22 @@ Un buscador de letras y karaoke con letras sincronizadas usando LRCLIB y Audd.io
    ```
 
 5. **Configura las variables de entorno**:
-   Crea un archivo `.env` en la raíz del proyecto:
-   ```env
-   API_TOKEN=tu_token_de_audd_io
+   Copia el archivo `.env.example` a `.env` y completa los valores:
+   ```bash
+   cp .env.example .env
    ```
+   Variables disponibles:
+   ```env
+   # Token de Audd.io para reconocimiento/búsqueda de letras
+   API_TOKEN=
+   ```
+
+6. **Crea la carpeta de audio**:
+   Crea la carpeta `sounds/` en la raíz del proyecto y coloca allí tus archivos `.mp3` (y otros formatos soportados). Recomendado nombrar archivos como:
+   - `Canción - Artista.mp3`
+   - `Artista - Canción.mp3`
+   
+   Nota: Usar ese formato mejora la extracción automática de artista y canción en el modo karaoke, ya que `lyrics_finder.py` detecta el patrón " - " para separar los campos.
 
 ## 📋 Uso
 
@@ -83,7 +99,8 @@ sound-lyrics/
 ├── main.py              # Programa principal
 ├── lyrics_finder.py     # Lógica de búsqueda de letras
 ├── pyproject.toml       # Configuración del proyecto
-├── .env                 # Variables de entorno (crear)
+├── .env                 # Variables de entorno
+├── .env.example         # Ejemplo de variables de entorno
 ├── .gitignore          # Archivos ignorados por Git
 ├── README.md           # Este archivo
 ├── sounds/             # Directorio para archivos de audio
@@ -132,7 +149,7 @@ El programa usará timestamps simulados si no encuentra letras sincronizadas rea
 
 ## 📄 Licencia
 
-Este proyecto es de código abierto. Úsalo libremente para tus proyectos de karaoke.
+Este proyecto está licenciado bajo **GPL-3.0**. Revisa el archivo `LICENSE` en la raíz del repositorio para más detalles.
 
 ## 🤝 Contribuciones
 
